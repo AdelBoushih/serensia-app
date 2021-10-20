@@ -1,0 +1,67 @@
+table td {
+  width: 20px;
+  height: 20px;
+  transition: all 1s ease;
+  border: 1px solid rgb(189, 187, 187);
+  padding: 5px;
+  cursor: pointer;
+}
+table td:hover {
+  background: #ffeeff;
+}
+.active {
+  background: rgb(56, 13, 156);
+  border-radius: 50%;
+}
+table td {
+  margin: 12px 12px 12px 12px;
+  padding: 12px 12px 12px 12px;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 10px;
+  *border-collapse: expression("separate", cellSpacing= "10px");
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.overflow {
+  overflow-x: overlay !important;
+}
+.error {
+  padding: 10px;
+  margin-top: 20px;
+  color: rgb(199, 68, 68);
+  font-weight: 600;
+  font-size: 16px;
+}
+.game-info {
+  padding: 10px;
+  margin-top: 20px;
+  color: rgb(31, 90, 218);
+  font-weight: 400;
+  font-size: 16px;
+}
+.toast {
+  display: none;
+  font-weight: 500;
+  position: fixed;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  padding: 10px;
+  bottom: 40px;
+  right: 40px;
+  width: 250px;
+  border-radius: 10px;
+  background-color: white;
+  -webkit-box-shadow: 5px 5px 8px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 8px -2px rgba(0, 0, 0, 0.5);
+  overflow-y: overlay;
+  max-height: 500px;
+}
+#close {
+  position: absolute;
+  font-weight: 600;
+  top: 3px;
+  right: 4px;
+}

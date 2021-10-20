@@ -1,0 +1,55 @@
+<div style="margin-top: 25px">
+  <h3><strong style="color: #f08835">Test 2</strong></h3>
+  <form class="clr-form clr-form-compact">
+    <div class="clr-form-control clr-row">
+      <div class="clr-col-md-6 clr-col-sm-12">
+        <label for="example" class="clr-control-label clr-col-12 clr-col-md-6"
+          >Entrez le chemin du fichier HTML</label
+        >
+        <div class="clr-control-container clr-col-12 clr-col-md-6">
+          <div class="clr-input-wrapper">
+            <input
+              type="text"
+              placeholder="Veuillez entrer le chemin du fichier HTML"
+              class="clr-input"
+              name="file"
+              [(ngModel)]="file"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="clr-col-md-6 clr-col-sm-12">
+        <label for="example" class="clr-control-label clr-col-12 clr-col-md-6"
+          >Depth maximal</label
+        >
+        <div class="clr-control-container clr-col-12 clr-col-md-6">
+          <div class="clr-input-wrapper">
+            <input
+              type="number"
+              placeholder="Veuillez préciser le depth maximal"
+              [(ngModel)]="maxDepth"
+              name="maxDepth"
+              class="clr-input"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      type="button"
+      class="btn"
+      style="margin-top: 20px"
+      (click)="getEmails()"
+    >
+      Extraire
+    </button>
+    <div *ngIf="emails && emails.length" style="margin-top: 12px">
+      <strong>Les emails détéctées:</strong><br />
+      <ul class="heroes">
+        <li *ngFor="let email of emails">
+          {{ email }}
+        </li>
+      </ul>
+    </div>
+  </form>
+</div>

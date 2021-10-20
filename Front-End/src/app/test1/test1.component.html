@@ -1,0 +1,105 @@
+<div>
+  <h3><strong style="color: #264e89">Test 1</strong></h3>
+  <form class="clr-form clr-form-compact">
+    <div class="clr-form-control clr-row">
+      <div class="clr-col-md-6 clr-col-sm-12">
+        <label for="example" class="clr-control-label clr-col-12 clr-col-md-6"
+          >Terme à rechercher</label
+        >
+        <div class="clr-control-container clr-col-12 clr-col-md-6">
+          <div class="clr-input-wrapper">
+            <input
+              type="text"
+              placeholder="Veuillez entrer un terme"
+              class="clr-input"
+              name="term"
+              [(ngModel)]="term"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="clr-col-md-6 clr-col-sm-12">
+        <label for="example" class="clr-control-label clr-col-12 clr-col-md-6"
+          >Nombre de suggestions</label
+        >
+        <div class="clr-control-container clr-col-12 clr-col-md-6">
+          <div class="clr-input-wrapper">
+            <input
+              type="number"
+              placeholder="Veuillez entrer le nombre de suggestions voulu"
+              [(ngModel)]="number_suggestions"
+              name="number_suggestions"
+              class="clr-input"
+              min="1"
+              max="10"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clr-form-control clr-row">
+      <div class="clr-col-md-6 clr-col-sm-12">
+        <label for="example" class="clr-control-label clr-col-12 clr-col-md-6"
+          >Cliquez sur Entrée pour valider un terme
+        </label>
+        <div class="clr-control-container clr-col-12 clr-col-md-6">
+          <div class="clr-input-wrapper">
+            <input
+              type="string"
+              placeholder="Veuillez taper un nouveau terme"
+              name="choice"
+              [(ngModel)]="choice"
+              class="clr-input"
+              (keyup.enter)="addChoice()"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="clr-col-md-6 clr-col-sm-12">
+        <label for="example" class="clr-control-label clr-col-12 clr-col-md-6"
+          >Liste des termes
+        </label>
+        <div class="clr-control-container clr-col-12 clr-col-md-6">
+          <div class="clr-input-wrapper">
+            [<span
+              *ngFor="let choice of choices"
+              style="margin-left: 5px; margin-right: 5px"
+            >
+              {{ choice }}
+            </span>
+            ]
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="clr-form-control clr-row">
+      <div class="clr-col-md-6 clr-col-sm-12">
+        <button
+          type="button"
+          class="btn"
+          style="margin-top: 20px"
+          (click)="send()"
+        >
+          Envoyer
+        </button>
+      </div>
+      <div *ngIf="suggestions" class="clr-col-md-7 clr-col-sm-12">
+        <label for="example" class="clr-control-label clr-col-12 clr-col-md-7"
+          >Liste des suggestions
+        </label>
+        <div class="clr-control-container clr-col-12 clr-col-md-7">
+          <div class="clr-input-wrapper">
+            [<span
+              *ngFor="let suggestion of suggestions"
+              style="margin-left: 5px; margin-right: 5px"
+            >
+              {{ suggestion }}
+            </span>
+            ]
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
